@@ -1,29 +1,35 @@
-package quiz17;		
+package quiz17;
+
+import java.util.Arrays;
+
 public class Solution {
 	public static void main(String[] args) {
-//		x 좌표와 y 좌표가 모두 양수이면 제1사분면에 속합니다.
-//		x 좌표가 음수, y 좌표가 양수이면 제2사분면에 속합니다.
-//		x 좌표와 y 좌표가 모두 음수이면 제3사분면에 속합니다.
-//		x 좌표가 양수, y 좌표가 음수이면 제4사분면에 속합니다.
-//		x 좌표 (x, y)를 차례대로 담은 정수 배열 dot이 매개변수로 주어집니다. 좌표 dot이 사분면 중 어디에 속하는지 1, 2, 3, 4 중 하나를 return 하도록 solution 함수를 완성해주세요.
 
-
-		int solution = solution(-7,9);
+		String[] solution = {"aya", "yee", "u", "maa", "wyeoo"};
 		System.out.println(solution);
 
 
 	}
-	public static int solution(int x, int y) {
+	public static int solution(String[] babbling) {
+		int answer = 0;
 		
-		if(x > 0 && y > 0) {
-			return 1;
-		}else if(x < 0 && y > 0) {
-			return 2;
-		}else if(x < 0 && y < 0) {
-			return 3;
-		}else {
-			return 4;
+		String[] no = {"ayaaya", "yeye", "woowoo" , "mama"};
+		String[] yes = {"aya", "ye", "woo", "ma"};
+		
+		for(String str : babbling) {
+			String chk = str;
+			for(String nope : no) {
+				chk = chk.replace(nope, "X");
+			}
+			for(String yeah : yes) {
+				chk = chk.replace(yeah, "");
+			}
+			if(chk.length() == 0) {
+				answer++;
+			}
 		}
+		
+		return answer; 
 		
 	}
 
