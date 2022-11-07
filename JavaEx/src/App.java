@@ -12,7 +12,7 @@ public class App extends Frame{
 		//윈도우 크기 설정
 		setSize(300, 100);
 		//Button 추가
-		add(new Button("OK"), BorderLayout.SOUTH);
+		add(new Button("Ok"), BorderLayout.SOUTH);
 		//윈도우 종료 버튼을 클릭하면 프로세스 종료
 		addWindowListener(new WindowAdapter() {
 			@Override

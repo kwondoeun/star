@@ -5,35 +5,18 @@ import java.util.Arrays;
 public class Solution {
 	public static void main(String[] args) {
 
-		String[] solution = {"aya", "yee", "u", "maa", "wyeoo"};
-		System.out.println(solution);
-
-
+		int[] arr = {0,31,24,10,1,9};
+		System.out.println(solution(arr));
 	}
-	public static int solution(String[] babbling) {
+	public static int solution(int[] numbers) {
 		int answer = 0;
+		int[] max = numbers;
 		
-		String[] no = {"ayaaya", "yeye", "woowoo" , "mama"};
-		String[] yes = {"aya", "ye", "woo", "ma"};
+		Arrays.sort(max);
 		
-		for(String str : babbling) {
-			String chk = str;
-			for(String nope : no) {
-				chk = chk.replace(nope, "X");
-			}
-			for(String yeah : yes) {
-				chk = chk.replace(yeah, "");
-			}
-			if(chk.length() == 0) {
-				answer++;
-			}
-		}
-		
-		return answer; 
-		
+		answer = max[max.length-1] * max[max.length-2];
+		return answer;
 	}
-
-
 
 
 }
